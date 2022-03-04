@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="utf-8">
+    <title>ポテパンキャンプ - Webエンジニア輩出No1プログラミングスクール</title>
+    <link rel="stylesheet" href="style.css">
+</header>    
+</html>
+<body class="page-top webp-support">
+    <header class="Header Header--common">
+        <div class="HeaderContainer">
+           <a class="HeaderLogo" href="https://camp.potepan.com/">
+               <img class="HeaderLogo__image HeaderLogo__image--pc" src="HeaderLogo__image HeaderLogo__image--pc">
+               <img class="HeaderLogo__image HeaderLogo__image--sp" src="https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/header-logo-sp.png">
+           </a>
+           <nav class="HeaderNav">
+               <div class="HeaderNavHamburger jsc-hamburger">
+                   <span class="HeaderNavHamburger__line"></span>
+                   <span class="HeaderNavHamburger__line"></span>
+                   <span class="HeaderNavHamburger__line"></span>
+               </div>
+               <ul class="HeaderNavList jsc-hamburger-list">
+                   <li class=""
+               </ul>
+           </nav>
+        </div>
+    </header>
+    
+</body>
