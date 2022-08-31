@@ -3,13 +3,16 @@
   <p>Find me in app/views/orders/new.html.erb</p>
   
   <%= render "shared/error", obj: @order %>
-
-  <%= form_with model: @order, local:true do |f| %>
+  <% if @order.product.product_stopflag == 1 %>
+    <p>販売停止中の商品です</p>
+  <% else %>
+    <%= form_with model: @order, local:true do |f| %>
        <%= f.label :購入数 %>
        <%= f.number_field :order_number %>
        <%= f.label :購入合計額%>
        <%= f.text_field :order_sumprice %>
        <%= f.submit "送信ボタン" %>
-   <% end %>
+    <% end %>
+  <% end %>
 </div>
 

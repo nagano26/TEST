@@ -14,7 +14,7 @@
     <%= f.number_field :to_price, min: 100, value: params[:to_price] %>
     <%= f.submit "検索"%>
     <%= f.submit "検索クリア", name: :clear %>
-    <%  add_zaiko = true if  params[:add_zaiko] == "1" %>
+    <%  add_zaiko = true if params[:add_zaiko] == "1" %>
     <%= f.check_box :add_zaiko, checked: add_zaiko %>
     <%= label_tag :add_zaiko, "在庫切れを含む" %>
     <%  add_stopflag = true if params[:add_stopflag] == "1" %>

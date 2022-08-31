@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
        @product.product_zaiko = Product.find(order_params[:product_id]).product_zaiko
        render template: "products/show"
      elsif params[:back]
+       @product.product_zaiko = Product.find(order_params[:product_id]).product_zaiko
        render template: "products/show"
      else    
        #binding.pry
@@ -40,8 +41,8 @@ class OrdersController < ApplicationController
   end
   
   def confirm_new
-      logger.debug params.inspect
-      logger.debug "order confirm_new"
+      #logger.debug params.inspect
+      #logger.debug "order confirm_new"
       #binding.pry
       @order = Order.new(order_params)
       @product = Product.find(order_params[:product_id])

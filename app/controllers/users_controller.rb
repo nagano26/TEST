@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      @user.update!(user_stopflag: false)
+      @user.update!(user_logintime: Time.now, user_stopflag: false)
       redirect_to root_path, notice:"登録完了しました！ログインして下さい！"
     else
       render :new

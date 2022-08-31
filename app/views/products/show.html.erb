@@ -21,6 +21,14 @@
       <%if @product.errors.any? %>
         <p class="errors_message">在庫数の整合性が取れません</p>
       <% end %>
-      <%= render "orders/new" %>
+
+      <% if @product.product_stopflag == "1" %>
+        <p>販売停止中の商品です</p>
+      <% elsif @product.product_zaiko == 0 %>
+        <p>在庫切れの商品です</p>
+      <% else %>
+        <%= render "orders/new" %>
+      <% end %>
+
       <%= link_to "一覧に戻る", products_path %>
 </div>
