@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
           redirect_to root_path, notice: 'ログインしました'
         elsif user.user_stopflag == true
           logout
-          redirect_to new_user_path, notice: '退会済のユーザーです!ユーザーの新規登録して下さい!'
+          redirect_to new_user_path, notice: '新規登録して下さい'
         else
           flash[:alert] = 'ログイン失敗'
           render :new
