@@ -1,0 +1,21 @@
+<h1>登録内容確認画面</h1>
+<h2>登録するけど。。。。いい？</h2>
+<table>
+  <tr>
+    <th>購入数</th>
+    <td><%= @order.order_number %></td>
+  </tr>
+  <tr>
+    <th>購入合計額</th>
+    <td><%= @order.order_sumprice %></td>
+  </tr>
+</table>
+<%= form_with model:@order, local:true do |f| %>
+  <%= f.hidden_field :order_number %>
+  <%= f.hidden_field :order_sumprice %>
+  <%= f.hidden_field :user_id %></li>
+  <%= f.hidden_field :product_id %></li>
+  <%= f.submit "送信する"%>
+  <%= f.submit "戻る", name: "back" %>
+<% end %>
+

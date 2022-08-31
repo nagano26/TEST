@@ -1,0 +1,27 @@
+
+<h1>会員情報編集画面</h1>
+
+<%= render "shared/error", obj: @user %>
+<ul>
+<%= form_with model: @user, local:true, url: user_confirm_path(@user) do |f| %>
+
+  <li><%= f.label :ユーザー名  %></li>
+  <%= f.text_field :username %>
+
+  <li><%= f.label :ユーザー名（カナ）  %></li>
+  <%= f.text_field :username_kana %>
+  
+  <li><%= f.label :メールアドレス  %></li>
+  <%= f.text_field :email %>
+  
+  <li><%= f.label :パスワード%></li>
+  <%= f.password_field :password %>
+  
+  <li><%= f.label :再パスワード %></li>
+  <%= f.password_field :password_confirmation %>
+  
+  <%= f.submit "送信ボタン" %>
+<% end %>
+</ul>
+
+<%=link_to "戻る", user_path(@user) %>

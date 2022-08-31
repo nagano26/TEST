@@ -1,0 +1,14 @@
+<div>
+  <h1 class="font-bold text-4xl">購入画面</h1>
+  
+  <%= render "shared/error", obj: @order %>
+
+  <%= form_with model: @order, local:true, url: confirm_new_order_path do |f| %>
+       <%= f.label :購入数 %>
+       <%= f.number_field :order_number, in: 1..9 %>
+       <%= f.hidden_field :user_id, :value => current_user.id %>
+       <%= f.hidden_field :product_id, :value => @product.id %>
+       <%= f.submit "送信ボタン" %>
+  <% end %>
+</div>
+

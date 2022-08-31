@@ -1,0 +1,24 @@
+<div>
+  <h1 class="font-bold text-4xl">新規登録</h1>
+  <%= render "shared/error", obj: @user %>
+  <ul>
+  <%= form_with model: @user, local:true do |f| %>
+ 
+    <li><%= f.label :ユーザー名  %></li>
+    <%= f.text_field :username %>
+
+    <li><%= f.label :ユーザー名（カナ）  %></li>
+    <%= f.text_field :username_kana %>
+
+    <li><%= f.label :メールアドレス  %></li>
+    <%= f.text_field :email %>
+    
+    <li><%= f.label :パスワード%></li>
+    <%= f.password_field :password %>
+
+    <li><%= f.label :再パスワード %></li>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "送信ボタン" %>
+  <% end %>
+</div>

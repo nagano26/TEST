@@ -1,0 +1,15 @@
+<div>
+  <h1 class="font-bold text-4xl">購入画面</h1>
+  <p>Find me in app/views/orders/new.html.erb</p>
+  
+  <%= render "shared/error", obj: @order %>
+
+  <%= form_with model: @order, local:true do |f| %>
+       <%= f.label :購入数 %>
+       <%= f.number_field :order_number %>
+       <%= f.label :購入合計額%>
+       <%= f.text_field :order_sumprice %>
+       <%= f.submit "送信ボタン" %>
+   <% end %>
+</div>
+

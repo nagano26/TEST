@@ -1,0 +1,13 @@
+<div>
+  <h1 class="font-bold text-4xl">会員情報の詳細</h1>
+  <p>Find me in app/views/users/show.html.erb</p>
+  <ul>
+    <li><%=@user.username %></li>
+    <li><%=@user.username_kana %></li>
+    <li><%=@user.email %></li>
+    <li>********</li>
+  </ul>
+  <%=link_to "ユーザー情報を編集する", edit_user_path %>
+  <%=link_to "マイページに戻る", root_path %>
+  <%=link_to "退会", unsubscribe_path(current_user) %>
+</div>

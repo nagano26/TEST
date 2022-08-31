@@ -1,0 +1,38 @@
+<div>
+  <h1 class="font-bold text-4xl">商品一覧</h1>
+  <p>Find me in app/views/products/index.html.erb</p>
+  <%= link_to '新しい順', products_path(latest: "true") %>
+  <%= link_to '古い順', products_path(old: "true") %>
+  <%= form_with url: search_path, method: :get, local: true do |f| %>
+    <p>キーワード検索</p> 
+    <%= f.text_field :keyword, value: params[:keyword] %>
+    <p>在庫数検索</p>
+    <%= f.number_field :from, value: params[:from] %>
+    <%= f.number_field :to, value: params[:to] %>
+    <p>値段検索</p>
+    <%= f.number_field :from_price, min: 100, value: params[:from_price] %>
+    <%= f.number_field :to_price, min: 100, value: params[:to_price] %>
+    <%= f.submit "検索"%>
+    <%= f.submit "検索クリア", name: :clear %>
+    <%  add_zaiko = true if  params[:add_zaiko] == "1" %>
+    <%= f.check_box :add_zaiko, checked: add_zaiko %>
+    <%= label_tag :add_zaiko, "在庫切れを含む" %>
+    <%  add_stopflag = true if params[:add_stopflag] == "1" %>
+    <%= f.check_box :add_stopflag, checked: add_stopflag %>
+    <%= label_tag :add_stopflag, "販売停止を含む" %>
+  <% end %>
+  <% if @products.count == 0 %>
+    <p>検索条件に対する結果はありません</p>
+  <% end %>
+  <% @products.each do |f| %>
+    <table>
+        <tr>
+          <th>商品名</th>                
+          <td><%=link_to f.product_name, product_path(f) %></td>
+        </tr>          
+    </table>
+  <% end %>
+  <div>
+    <%=paginate @products %>
+  </div>
+</div>

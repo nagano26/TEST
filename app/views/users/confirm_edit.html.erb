@@ -1,0 +1,18 @@
+<h1>登録内容確認画面</h1>
+<h2>登録するけど。。。。いい？</h2>
+<ul>
+  <li><%= @user.username %></li>
+  <li><%= @user.username_kana %></li>
+  <li><%= @user.email %></li>
+  <li>********</li>
+</ul>
+
+<%= form_with model:@user, local:true do |f| %>
+    <%= f.hidden_field :username %>
+    <%= f.hidden_field :username_kana %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :password %>
+    <%= f.hidden_field :password_confirmation %>
+    <%= f.submit "送信する"%>
+    <%= f.submit "戻る", name: "back" %>
+<% end %>

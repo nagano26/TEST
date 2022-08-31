@@ -1,0 +1,12 @@
+<div>
+  <h1 class="font-bold text-4xl">マイページ</h1>
+  <% if logged_in? %>
+   <ul>
+     <li><%= link_to "商品一覧", products_path %></li>
+     <li><%= link_to "会員情報の詳細", user_path(current_user) %></li>
+   </ul>
+   <%=render 'orders/index' %>
+ <% else %>
+   <%=link_to "ログイン",login_path %>
+ <% end %>
+</div>

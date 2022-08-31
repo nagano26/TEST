@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Apprails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <% if flash[:notice] %>
+      <%= notice %>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <%= alert %>
+    <% end %>
+
+    <ul>
+      <% if logged_in? %>
+        <li><%=button_to "ログアウト", logout_path, method: :delete %></li>
+        <li><%= link_to "マイページ", root_path %></li>
+      <% else %>
+        <li><%=link_to "ログイン", login_path %></li>
+        <li><%=link_to "新規登録", new_user_path %></li>
+      <% end %>
+    </ul>
+     <h2>現在のログインユーザー</h2>
+     <% if current_user %>
+        <div>
+          <%= current_user.username %>
+        </div>
+      <% else %>
+        <p>現在はログアウトしている状態です</p>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>
