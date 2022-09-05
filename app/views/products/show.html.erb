@@ -7,15 +7,17 @@
         </tr>
         <tr> 
           <th>在庫数</th> 
-          <td><%= @product.product_zaiko %></td>
+          <td><%= @product.product_zaiko %>（個）</td>
         </tr> 
         <tr>
           <th>単価</th>
-          <td><%= @product.product_price%></td>
+          <td><%= @product.product_price%>（円）</td>
         </tr>
         <tr>
-          <th>販売停止フラグ</th>            
-          <td><%= @product.product_stopflag%><td>
+          <th>販売停止フラグ</th>
+          <% product_stopflag = "販売中" if @product.product_stopflag == "0" %>
+          <% product_stopflag = "販売停止中" if @product.product_stopflag == "1" %>
+          <td><%= product_stopflag %><td>
         </tr>                                                                 
       </table>
       <%if @product.errors.any? %>

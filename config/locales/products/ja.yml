@@ -1,0 +1,13 @@
+
+ja:
+  activerecord:
+    models:
+      product: 商品管理
+    attributes:
+      product:
+        product_name: 商品名
+        product_name_kana: 商品名（カナ）
+        product_price: 商品価格
+        product_zaiko: 商品在庫数
+        product_stopflag: 商品販売停止フラグ
+

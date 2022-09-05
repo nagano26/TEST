@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      order: 注文管理
+    attributes:
+      order:
+        order_number: 注文数
+        order_sumprice: 注文合計額
+        order_datetime: 注文日時

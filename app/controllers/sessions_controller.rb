@@ -18,6 +18,9 @@ class SessionsController < ApplicationController
           flash[:alert] = 'ログイン失敗'
           render :new
         end
+      else
+        flash[:alert] = 'ログイン失敗'
+        render :new
       end
   end
 

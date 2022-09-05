@@ -1,19 +1,18 @@
 <div>
-  <h1 class="font-bold text-4xl">商品一覧i</h1>
-  <p>Find me in app/views/products/index.html.erb</p>
+  <h1 class="font-bold text-4xl">商品一覧</h1>
   <%= link_to '新しい順', products_path(latest: "true") %>
   <%= link_to '古い順', products_path(old: "true") %>
   <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <p>キーワード検索</p> 
-    <%= f.text_field :keyword, value: params[:keyword] %>
-    <p>在庫数検索</p>
-    <%= f.number_field :from, value: params[:from] %>
-    <%= f.number_field :to, value: params[:to] %>
-    <p>値段検索</p>
-    <%= f.number_field :from_price, min: 100, value: params[:from_price] %>
-    <%= f.number_field :to_price, min: 100, value: params[:to_price] %>
-    <%= f.submit "検索"%>
     <%= f.submit "検索クリア", name: :clear %>
+    <p>キーワード検索</p> 
+    <%= f.text_field :keyword, value: params[:keyword], placeholder: "キーワード入力" %>
+    <p>在庫数検索</p>
+    <%= f.number_field :from, value: params[:from], min: 0, placeholder: "在庫の下限" %>
+    <%= f.number_field :to, value: params[:to], min: 0, placeholder: "在庫の上限" %>
+    <p>値段検索</p>
+    <%= f.number_field :from_price, min: 100, value: params[:from_price], placeholder: "値段の下限" %>
+    <%= f.number_field :to_price, min: 100, value: params[:to_price], placeholder: "値段の上限" %>
+    <%= f.submit "検索"%>
     <%  add_zaiko = true if params[:add_zaiko] == "1" %>
     <%= f.check_box :add_zaiko, checked: add_zaiko %>
     <%= label_tag :add_zaiko, "在庫切れを含む" %>

@@ -1,13 +1,13 @@
 <h1>登録内容確認画面</h1>
-<h2>登録するけど。。。。いい？</h2>
+<h2>以下の内容で登録してよろしいでしょうか？</h2>
 <table>
   <tr>
     <th>購入数</th>
-    <td><%= @order.order_number %></td>
+    <td><%= @order.order_number %>（個）</td>
   </tr>
   <tr>
     <th>購入合計額</th>
-    <td><%= @order.order_sumprice %></td>
+    <td><%= @order.order_sumprice %>（円）</td>
   </tr>
 </table>
 <%= form_with model:@order, local:true do |f| %>
